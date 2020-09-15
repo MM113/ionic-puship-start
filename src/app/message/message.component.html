@@ -1,0 +1,16 @@
+<ion-item *ngIf="message" [routerLink]="'/message/' + message.id" [detail]="false">
+  <div slot="start" [class]="!message.read ? 'dot dot-unread' : 'dot'"></div>
+  <ion-label class="ion-text-wrap">
+    <h2>
+      {{ message.param1 }}
+      <span class="date">
+        <ion-note>{{ message.date | date :'short'}}</ion-note>
+        <ion-icon name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
+      </span>
+    </h2>
+    <h3>{{ message.param2 }}</h3>
+    <p>
+      {{ message.message }}
+    </p>
+  </ion-label>
+  </ion-item>

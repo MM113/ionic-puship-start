@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="message">
+  <ion-item>
+    <ion-icon name="person-circle" color="primary"></ion-icon>
+    <ion-label class="ion-text-wrap">
+      <h2>
+        {{ message.param1 }}
+        <span class="date">
+          <ion-note>{{ message.date | date :'short'}}</ion-note>
+        </span>
+      </h2>
+      <h3>To: <ion-note>Me</ion-note></h3>
+    </ion-label>
+  </ion-item>
+  
+  <div class="ion-padding">
+    <h1>{{ message.param2 }}</h1>
+    <p>
+      {{ message.message }}
+    </p>
+  </div>
+</ion-content>
